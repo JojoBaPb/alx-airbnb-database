@@ -20,3 +20,13 @@ This section demonstrates the use of subqueries to filter and analyze relational
 
 These subqueries illustrate powerful ways to perform nested analysis, especially when filtering based on aggregates or related entity counts.
 
+## Aggregations and Window Functions
+
+This section explores SQL features that allow for statistical analysis and ranked outputs:
+
+1. **Aggregation with COUNT & GROUP BY**: Calculates the total number of bookings per user. A `LEFT JOIN` ensures even users with zero bookings are included. The `GROUP BY` clause organizes results by user, and the output is ordered by booking count in descending order.
+
+2. **Window Function with RANK()**: Ranks properties based on how many bookings each has received. The `RANK()` window function is applied over the ordered booking counts to assign ranks. This helps identify the most frequently booked properties and how they compare to others.
+
+These techniques are useful for producing leaderboards, reports, and business intelligence dashboards in real-world applications.
+
