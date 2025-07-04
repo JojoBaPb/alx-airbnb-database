@@ -26,7 +26,7 @@ This section explores SQL features that allow for statistical analysis and ranke
 
 1. **Aggregation with COUNT & GROUP BY**: Calculates the total number of bookings per user. A `LEFT JOIN` ensures even users with zero bookings are included. The `GROUP BY` clause organizes results by user, and the output is ordered by booking count in descending order.
 
-2. **Window Function with ROW_NUMBER()**: Ranks properties by the number of bookings using `ROW_NUMBER()`. This function assigns a unique rank to each property in descending order of bookings, making it useful for leaderboard-style outputs where ties are not grouped.
+2. **Window Functions with RANK() and ROW_NUMBER()**: We use both `RANK()` and `ROW_NUMBER()` to rank properties based on total bookings. `RANK()` allows ties (same rank for equal counts), while `ROW_NUMBER()` provides a strict sequential order with no duplicates. These techniques help compare popularity among properties.
 
 These techniques are useful for producing leaderboards, reports, and business intelligence dashboards in real-world applications.
 
