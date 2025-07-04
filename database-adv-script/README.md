@@ -10,3 +10,13 @@ In this section, it is demonstrated how the use of SQL joins to combine data acr
 
 Each query is crafted to mirror realistic scenarios encountered in production database systems where insights must be extracted from incomplete or partially related datasets.
 
+## Subqueries
+
+This section demonstrates the use of subqueries to filter and analyze relational data:
+
+1. **Non-Correlated Subquery**: Retrieves all properties whose average review rating exceeds 4.0. The subquery groups reviews by `property_id` and uses `HAVING AVG(rating) > 4.0` to filter out lower-rated properties. The outer query fetches property details for the filtered IDs.
+
+2. **Correlated Subquery**: Identifies users who have made more than three bookings. The subquery counts the number of bookings for each user by referencing the outer query’s `users.id`, making it correlated. Only users with more than 3 associated bookings are returned.
+
+These subqueries illustrate powerful ways to perform nested analysis, especially when filtering based on aggregates or related entity counts.
+
