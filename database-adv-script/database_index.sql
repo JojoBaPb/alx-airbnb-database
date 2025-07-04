@@ -13,3 +13,16 @@ CREATE INDEX idx_bookings_start_date ON bookings(start_date);
 CREATE INDEX idx_properties_id ON properties(id);
 CREATE INDEX idx_properties_title ON properties(title);
 
+-- Performance test query using EXPLAIN ANALYZE
+-- This measures the query performance after indexes are added
+
+EXPLAIN ANALYZE
+SELECT
+    users.name,
+    COUNT(bookings.id) AS total_bookings
+FROM
+    users
+JOIN
+    bookings ON users.id = bookings.user_id
+GROUP BY
+    users.name;
